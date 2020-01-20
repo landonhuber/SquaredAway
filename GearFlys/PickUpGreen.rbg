@@ -33,7 +33,7 @@
 
 <ProgrammingBlock type="functionCall" function="turnRight">
     <Parameters>
-        <Parameter name="quantity" type="float" default="1">240</Parameter>
+        <Parameter name="quantity" type="float" default="1">300</Parameter>
         <Parameter name="unitType" type="base typedef" default="rotations" typeDef="tMovementUnits">degrees</Parameter>
         <Parameter name="speed" type="short" default="50">100</Parameter>
     </Parameters>
@@ -41,7 +41,7 @@
 
 <ProgrammingBlock type="functionCall" function="forward">
     <Parameters>
-        <Parameter name="quantity" type="float" default="1">0.50</Parameter>
+        <Parameter name="quantity" type="float" default="1">0.75</Parameter>
         <Parameter name="unitType" type="base typedef" default="rotations" typeDef="tMovementUnits">seconds</Parameter>
         <Parameter name="speed" type="short" default="50">100</Parameter>
     </Parameters>
@@ -49,7 +49,7 @@
 
 <ProgrammingBlock type="functionCall" function="turnLeft">
     <Parameters>
-        <Parameter name="quantity" type="float" default="1">315</Parameter>
+        <Parameter name="quantity" type="float" default="1">420</Parameter>
         <Parameter name="unitType" type="base typedef" default="rotations" typeDef="tMovementUnits">degrees</Parameter>
         <Parameter name="speed" type="short" default="50">100</Parameter>
     </Parameters>
@@ -57,9 +57,9 @@
 
 <ProgrammingBlock type="functionCall" function="forward">
     <Parameters>
-        <Parameter name="quantity" type="float" default="1">0.9</Parameter>
+        <Parameter name="quantity" type="float" default="1">1.6</Parameter>
         <Parameter name="unitType" type="base typedef" default="rotations" typeDef="tMovementUnits">seconds</Parameter>
-        <Parameter name="speed" type="short" default="50">100</Parameter>
+        <Parameter name="speed" type="short" default="50">50</Parameter>
     </Parameters>
 </ProgrammingBlock>
 
@@ -82,7 +82,7 @@
 
 <ProgrammingBlock type="functionCall" function="turnRight">
     <Parameters>
-        <Parameter name="quantity" type="float" default="1">83</Parameter>
+        <Parameter name="quantity" type="float" default="1">84</Parameter>
         <Parameter name="unitType" type="base typedef" default="rotations" typeDef="tMovementUnits">degrees</Parameter>
         <Parameter name="speed" type="short" default="50">50</Parameter>
     </Parameters>
@@ -90,7 +90,120 @@
 
 <ProgrammingBlock type="functionCall" function="forward">
     <Parameters>
-        <Parameter name="quantity" type="float" default="1">0.65</Parameter>
+        <Parameter name="quantity" type="float" default="1">0.68</Parameter>
+        <Parameter name="unitType" type="base typedef" default="rotations" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short" default="50">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="moveMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" default="motor10" typeDef="tMotor">armMotor</Parameter>
+        <Parameter name="quantity" type="float" default="1">0.4</Parameter>
+        <Parameter name="unitType" type="base typedef" default="rotations" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short" default="50">-100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="backward">
+    <Parameters>
+        <Parameter name="quantity" type="float" default="1">1</Parameter>
+        <Parameter name="unitType" type="base typedef" default="rotations" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short" default="50">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="setTouchLEDColor">
+    <Parameters>
+        <Parameter name="nDeviceIndex" type="base typedef" typeDef="tSensors">startLight</Parameter>
+        <Parameter name="nColor" type="base typedef" typeDef="TSimpleColors">colorViolet</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="OneLineLoop" loopType="WaitUntil">
+    <Parameters>
+        <Parameter name="LHS" type="typedef">getTouchLEDValue(startLight)</Parameter>
+        <Parameter name="operator" type="typedef">==</Parameter>
+        <Parameter name="RHS" type="bool" typeDef="bool">1</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="setTouchLEDColor">
+    <Parameters>
+        <Parameter name="nDeviceIndex" type="base typedef" typeDef="tSensors">startLight</Parameter>
+        <Parameter name="nColor" type="base typedef" typeDef="TSimpleColors">colorGreen</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="moveMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" default="motor10" typeDef="tMotor">armMotor</Parameter>
+        <Parameter name="quantity" type="float" default="1">1</Parameter>
+        <Parameter name="unitType" type="base typedef" default="rotations" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short" default="50">-100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="turnLeft">
+    <Parameters>
+        <Parameter name="quantity" type="float" default="1">300</Parameter>
+        <Parameter name="unitType" type="base typedef" default="rotations" typeDef="tMovementUnits">degrees</Parameter>
+        <Parameter name="speed" type="short" default="50">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="forward">
+    <Parameters>
+        <Parameter name="quantity" type="float" default="1">0.765</Parameter>
+        <Parameter name="unitType" type="base typedef" default="rotations" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short" default="50">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="turnRight">
+    <Parameters>
+        <Parameter name="quantity" type="float" default="1">410</Parameter>
+        <Parameter name="unitType" type="base typedef" default="rotations" typeDef="tMovementUnits">degrees</Parameter>
+        <Parameter name="speed" type="short" default="50">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="forward">
+    <Parameters>
+        <Parameter name="quantity" type="float" default="1">1.6</Parameter>
+        <Parameter name="unitType" type="base typedef" default="rotations" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short" default="50">50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="moveMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" default="motor10" typeDef="tMotor">armMotor</Parameter>
+        <Parameter name="quantity" type="float" default="1">1</Parameter>
+        <Parameter name="unitType" type="base typedef" default="rotations" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short" default="50">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="forward">
+    <Parameters>
+        <Parameter name="quantity" type="float" default="1">0.5</Parameter>
+        <Parameter name="unitType" type="base typedef" default="rotations" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short" default="50">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="turnLeft">
+    <Parameters>
+        <Parameter name="quantity" type="float" default="1">94</Parameter>
+        <Parameter name="unitType" type="base typedef" default="rotations" typeDef="tMovementUnits">degrees</Parameter>
+        <Parameter name="speed" type="short" default="50">50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="forward">
+    <Parameters>
+        <Parameter name="quantity" type="float" default="1">0.8</Parameter>
         <Parameter name="unitType" type="base typedef" default="rotations" typeDef="tMovementUnits">seconds</Parameter>
         <Parameter name="speed" type="short" default="50">100</Parameter>
     </Parameters>
@@ -146,14 +259,28 @@ task main()
 	waitUntil (getTouchLEDValue(startLight) == 1);
 	setTouchLEDColor(startLight, colorGreen);
 	moveMotor(armMotor, 1, seconds, -100);
-	turnRight(240, degrees, 100);
-	forward(0.50, seconds, 100);
-	turnLeft(315, degrees, 100);
-	forward(0.9, seconds, 100);
+	turnRight(300, degrees, 100);
+	forward(0.75, seconds, 100);
+	turnLeft(420, degrees, 100);
+	forward(1.6, seconds, 50);
 	moveMotor(armMotor, 1, seconds, 100);
 	forward(0.5, seconds, 100);
-	turnRight(83, degrees, 50);
-	forward(0.65, seconds, 100);
+	turnRight(84, degrees, 50);
+	forward(0.68, seconds, 100);
+	moveMotor(armMotor, 0.4, seconds, -100);
+	backward(1, seconds, 100);
+	setTouchLEDColor(startLight, colorViolet);
+	waitUntil (getTouchLEDValue(startLight) == 1);
+	setTouchLEDColor(startLight, colorGreen);
+	moveMotor(armMotor, 1, seconds, -100);
+	turnLeft(300, degrees, 100);
+	forward(0.765, seconds, 100);
+	turnRight(410, degrees, 100);
+	forward(1.6, seconds, 50);
+	moveMotor(armMotor, 1, seconds, 100);
+	forward(0.5, seconds, 100);
+	turnLeft(94, degrees, 50);
+	forward(0.8, seconds, 100);
 	moveMotor(armMotor, 0.4, seconds, -100);
 	backward(1, seconds, 100);
 	setTouchLEDColor(startLight, colorViolet);
