@@ -71,9 +71,9 @@ void waitForTouch(){
 void firstGreen(){
 	motor[Convayor] = 100;
 	backwardMove(65, 10);
-	sleep(500);
+	sleep(300);
 	forwardMove(60, 10);
-	sleep(500);
+	sleep(300);
 	//Get Red
 	forwardMove(25,50);
 	turnRightDist(103,50);
@@ -81,36 +81,32 @@ void firstGreen(){
 	backwardMove(100,50);
 	moveMotorTarget(BackLock, -400,50);
 	backwardMove(70,10);
-	//sleep(750);
-	//waitUntilMotorStop(BackLock);
-	backwardMove(200,50);
+	backwardMove(192,50);   //originally 200
 	//Get Green Middle
-	turnLeftDist(50,50);
-	//sleep(3750);
+	turnLeftDist(48,50);    // originally 50 
 	forwardMove(135,30);
-	//turnLeftDist(20,30);
-	forwardMove(120,50);
+	forwardMove(120,20);  //changed to 20
 	moveMotorTarget(FrontClaw, 900, 50);
-	forwardMove(150,50);
-	turnRightDist(90,30);
-	forwardMove(450,50);
+	forwardMove(150,20);  //change to 20
+	turnRightDist(87,50);  //refining this angle  --- start 90
+	forwardMove(465,50);   //Work on this distance  --- start 450
 	moveMotorTarget(FrontClaw,-200,-30);
 	waitUntilMotorMoveComplete(FrontClaw);
 	forwardMove(20,50);
 	moveMotorTarget(FrontClaw,-200,-30);
-	backwardMove(90,50);
+	backwardMove(60,50);  //working on this  -- currently 90
 
 }
 
 void secondGreen(){
-	turnLeftDist(80,30);
+	turnLeftDist(87,50);  //working  -- currently 90
 	moveMotorTarget(FrontClaw,-1000,-1000);
 	//waitUntilMotorMoveComplete(FrontClaw);
 	sleep(600);
 	forwardMove(175,30);
 	moveMotorTarget(FrontClaw, 800, 50);
-	forwardMove(200,50);
-	turnLeftDist(103,30);
+	forwardMove(250,50);  // perfecting this distance
+	turnLeftDist(103,50);
 	forwardMove(490,50);
 	moveMotorTarget(FrontClaw,-400,-50);
 	waitUntilMotorMoveComplete(FrontClaw);
@@ -128,17 +124,40 @@ void getThirdGreen() {
 	forwardMove(12,50);
 
 	turnLeftDist(90,50);
-	forwardMove(290,30);
-	turnRightDist(135,50);
-	forwardMove(175,30);
+	forwardMove(300,30);  // orginally 290 
+	turnRightDist(134,50);  //orginally 135
+	forwardMove(190,30);   //originally 175
 	moveMotorTarget(FrontClaw, 900, 50);
-	forwardMove(200,50);
+	forwardMove(245,20);   //originally 200
 	turnLeftDist(47,30);
 	forwardMove(235,50);
 	//turnLeftDist(10,10);
 	moveMotorTarget(FrontClaw,-400,-50);
 	waitUntilMotorMoveComplete(FrontClaw);
 	backwardMove(200,50);
+
+	//Get Blue
+	moveMotorTarget(FrontClaw,-400,-50);
+	turnRightDist(90,50);  
+	forwardMove(355,50);     //originally 270
+	turnLeftDist(90,50);
+	forwardMove(200,30);     //orginally 150 
+	moveMotorTarget(FrontClaw, 700, 100);
+	sleep(500);
+	//Place Blue
+	turnRightDist(45,50);  	
+	backwardMove(300,50);
+	turnLeftDist(135,50);
+	forwardMove(1000,50); 
+	turnLeftDist(35,50);
+	moveMotorTarget(FrontClaw,-500,-100);	
+	sleep(500);
+	moveMotorTarget(FrontClaw,-300,-100);	
+//	waitUntilMotorMoveComplete(FrontClaw);
+	forwardMove(470,50);
+	backwardMove(100,50);  //working on this  -- currently 90
+	
+	
 }
 
 task main()
